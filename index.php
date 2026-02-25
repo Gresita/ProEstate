@@ -2,7 +2,7 @@
 session_start();
 require "config/db.php";
 
-$sql = "SELECT p.*, (SELECT image_name FROM property_images WHERE property_id = p.id LIMIT 1) as img FROM properties p WHERE p.status = "available" ORDER BY p.created_at DESC";
+$sql = "SELECT p.*, (SELECT image_name FROM property_images WHERE property_id = p.id LIMIT 1) as img FROM properties p WHERE p.status = 'available' ORDER BY p.created_at DESC";
 $result = $conn->query($sql);
 ?>
 
